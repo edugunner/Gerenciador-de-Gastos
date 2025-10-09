@@ -1,12 +1,11 @@
 package com.edugunner.GerenciadorGastos.service;
 
 import at.favre.lib.crypto.bcrypt.BCrypt;
+import com.edugunner.GerenciadorGastos.api.dtos.UserRequest;
 import com.edugunner.GerenciadorGastos.domain.UserModel;
 import com.edugunner.GerenciadorGastos.repository.UserRepository;
-import org.apache.catalina.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
 @Service
 public class UserService {
@@ -18,10 +17,16 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
-    public UserModel createUser(UserModel userModel){
+    public UserModel createUser(UserRequest userRequest){
 
-        String hashredPassword = BCrypt.withDefaults().hashToString(12, userModel.getPassword().toCharArray());
-        userModel.setPassword(hashredPassword);
-        return userRepository.save(userModel);
+        UserModel userModel = new UserModel();
+        userModel.setName(userRequest.getName());
+        userModel.setEmail(userRequest.getEmail());
+
+        String hashedPassword = BCrypt.withDefaults().hashToString(12, userRequest.getPassword().toCharArray());
+        userModel.setPassword(hashedPassword);
+
+
+        return this.userRepository.save(userModel);
     }
 }

@@ -1,5 +1,6 @@
 package com.edugunner.GerenciadorGastos.controller;
 
+import com.edugunner.GerenciadorGastos.api.dtos.UserRequest;
 import com.edugunner.GerenciadorGastos.domain.UserModel;
 import com.edugunner.GerenciadorGastos.repository.UserRepository;
 import com.edugunner.GerenciadorGastos.service.UserService;
@@ -23,9 +24,9 @@ public class UserController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<UserModel> createUser(@RequestBody UserModel userModel) throws Exception {
-        UserModel createdUser = userService.createUser(userModel);
-        return ResponseEntity.status(201).body(createdUser);
+    public ResponseEntity<UserModel> createUser(@RequestBody UserRequest userRequest) throws Exception {
+        UserModel createdUser = userService.createUser(userRequest);
 
+        return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
     }
 }
