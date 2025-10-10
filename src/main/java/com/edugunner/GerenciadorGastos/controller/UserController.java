@@ -19,12 +19,9 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
 
     @PostMapping("/create")
-    public ResponseEntity<UserModel> createUser(@RequestBody UserRequest userRequest) throws Exception {
+    public ResponseEntity<UserModel> createUser(@RequestBody UserRequest userRequest){
         UserModel createdUser = userService.createUser(userRequest);
 
         return new ResponseEntity<>(createdUser, HttpStatus.CREATED);

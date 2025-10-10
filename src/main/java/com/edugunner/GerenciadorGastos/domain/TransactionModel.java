@@ -1,13 +1,19 @@
 package com.edugunner.GerenciadorGastos.domain;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Getter
+@Setter
+@Entity(name = "tb_transactions")
 public class TransactionModel {
 
     private String category;
@@ -23,4 +29,5 @@ public class TransactionModel {
 
     @CreationTimestamp
     private LocalDateTime createdAt;
+
 }

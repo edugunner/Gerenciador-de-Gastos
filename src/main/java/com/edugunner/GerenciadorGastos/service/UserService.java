@@ -20,10 +20,10 @@ public class UserService {
     public UserModel createUser(UserRequest userRequest){
 
         UserModel userModel = new UserModel();
-        userModel.setName(userRequest.getName());
-        userModel.setEmail(userRequest.getEmail());
+        userModel.setName(userRequest.name());
+        userModel.setEmail(userRequest.email());
 
-        String hashedPassword = BCrypt.withDefaults().hashToString(12, userRequest.getPassword().toCharArray());
+        String hashedPassword = BCrypt.withDefaults().hashToString(12, userRequest.password().toCharArray());
         userModel.setPassword(hashedPassword);
 
 
