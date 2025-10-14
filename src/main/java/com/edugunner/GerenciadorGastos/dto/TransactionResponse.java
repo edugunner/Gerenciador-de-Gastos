@@ -1,6 +1,6 @@
-package com.edugunner.GerenciadorGastos.api.dtos;
+package com.edugunner.GerenciadorGastos.dto;
 
-import com.edugunner.GerenciadorGastos.domain.TransactionType;
+import com.edugunner.GerenciadorGastos.domain.transaction.TransactionType;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

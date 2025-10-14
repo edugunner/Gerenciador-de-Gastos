@@ -1,4 +1,4 @@
-package com.edugunner.GerenciadorGastos.domain;
+package com.edugunner.GerenciadorGastos.domain.transaction;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

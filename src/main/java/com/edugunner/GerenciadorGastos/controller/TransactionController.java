@@ -1,8 +1,8 @@
 package com.edugunner.GerenciadorGastos.controller;
 
-import com.edugunner.GerenciadorGastos.api.dtos.TransactionRequest;
-import com.edugunner.GerenciadorGastos.api.dtos.TransactionResponse;
-import com.edugunner.GerenciadorGastos.domain.TransactionModel;
+import com.edugunner.GerenciadorGastos.dto.TransactionRequest;
+import com.edugunner.GerenciadorGastos.dto.TransactionResponse;
+import com.edugunner.GerenciadorGastos.domain.transaction.TransactionModel;
 import com.edugunner.GerenciadorGastos.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

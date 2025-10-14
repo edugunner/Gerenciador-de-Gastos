@@ -1,7 +1,7 @@
 package com.edugunner.GerenciadorGastos.service;
 
-import com.edugunner.GerenciadorGastos.api.dtos.TransactionRequest;
-import com.edugunner.GerenciadorGastos.domain.TransactionModel;
+import com.edugunner.GerenciadorGastos.dto.TransactionRequest;
+import com.edugunner.GerenciadorGastos.domain.transaction.TransactionModel;
 import com.edugunner.GerenciadorGastos.repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
